@@ -101,7 +101,7 @@ class CheckoutService {
 }
 
 // ========== Main Method ==========
-class Main {
+class Abstract_Factory {
     public static void main(String[] args) {
         // Using Razorpay in India
         CheckoutService indiaCheckout = new CheckoutService(new IndiaFactory(), "razorpay");
