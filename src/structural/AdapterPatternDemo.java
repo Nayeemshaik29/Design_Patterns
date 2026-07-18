@@ -1,4 +1,4 @@
-/*
+package structural;/*
 ===============================================================================
 
                     ADAPTER DESIGN PATTERN
@@ -65,7 +65,7 @@ class OldUSBCharger {
 
     public void powerSupply() {
 
-        System.out.println("Charging Mobile using Old USB Charger.");
+        System.out.println("Charging structural.Mobile using Old USB Charger.");
     }
 }
 
@@ -75,9 +75,9 @@ class OldUSBCharger {
 
                     ADAPTER
 
-Implements MobileCharger interface.
+Implements structural.MobileCharger interface.
 
-Internally uses OldUSBCharger.
+Internally uses structural.OldUSBCharger.
 
 Converts
 
@@ -112,7 +112,7 @@ class ChargerAdapter implements MobileCharger {
 
                     MODERN CHARGER
 
-Already follows MobileCharger interface.
+Already follows structural.MobileCharger interface.
 
 No adapter required.
 
@@ -124,7 +124,7 @@ class TypeCCharger implements MobileCharger {
     @Override
     public void charge() {
 
-        System.out.println("Charging Mobile using Type-C Charger.");
+        System.out.println("Charging structural.Mobile using Type-C Charger.");
     }
 }
 
@@ -134,7 +134,7 @@ class TypeCCharger implements MobileCharger {
 
                     CLIENT
 
-Mobile only understands
+structural.Mobile only understands
 
 charge()
 
@@ -174,21 +174,21 @@ public class AdapterPatternDemo {
         /*
         ===============================================================
 
-        Mobile uses Old Charger through Adapter
+        structural.Mobile uses Old Charger through Adapter
 
-        Mobile
-
-            |
-
-        MobileCharger
+        structural.Mobile
 
             |
 
-        ChargerAdapter
+        structural.MobileCharger
 
             |
 
-        OldUSBCharger
+        structural.ChargerAdapter
+
+            |
+
+        structural.OldUSBCharger
 
         ===============================================================
         */
@@ -210,7 +210,7 @@ public class AdapterPatternDemo {
         /*
         ===============================================================
 
-        Mobile uses Type-C Charger directly
+        structural.Mobile uses Type-C Charger directly
 
         No Adapter Required
 
@@ -233,19 +233,19 @@ Dry Run
 
 Case 1
 
-Mobile
+structural.Mobile
 
     |
 
-MobileCharger
+structural.MobileCharger
 
     |
 
-ChargerAdapter
+structural.ChargerAdapter
 
     |
 
-OldUSBCharger
+structural.OldUSBCharger
 
     |
 
@@ -253,7 +253,7 @@ powerSupply()
 
 Output
 
-Charging Mobile using Old USB Charger.
+Charging structural.Mobile using Old USB Charger.
 
 
 ------------------------------------------------------
@@ -261,15 +261,15 @@ Charging Mobile using Old USB Charger.
 
 Case 2
 
-Mobile
+structural.Mobile
 
     |
 
-MobileCharger
+structural.MobileCharger
 
     |
 
-TypeCCharger
+structural.TypeCCharger
 
     |
 
@@ -277,7 +277,7 @@ charge()
 
 Output
 
-Charging Mobile using Type-C Charger.
+Charging structural.Mobile using Type-C Charger.
 
 
 ===============================================================================
@@ -285,23 +285,23 @@ Charging Mobile using Type-C Charger.
 Flow Diagram
 
 
-                Mobile
+                structural.Mobile
 
                    |
 
-             MobileCharger
+             structural.MobileCharger
 
              /           \
 
             /             \
 
-    TypeCCharger     ChargerAdapter
+    structural.TypeCCharger     structural.ChargerAdapter
 
                            |
 
                            |
 
-                    OldUSBCharger
+                    structural.OldUSBCharger
 
                            |
 
@@ -312,11 +312,11 @@ Flow Diagram
 
 OUTPUT
 
-Charging Mobile using Old USB Charger.
+Charging structural.Mobile using Old USB Charger.
 
 --------------------------------
 
-Charging Mobile using Type-C Charger.
+Charging structural.Mobile using Type-C Charger.
 
 ===============================================================================
 
@@ -344,21 +344,21 @@ Adapter Pattern allows incompatible interfaces to work together.
 Q2. What is the Target Interface?
 
 Ans:
-MobileCharger.
+structural.MobileCharger.
 
 ------------------------------------------------
 
 Q3. What is the Adaptee?
 
 Ans:
-OldUSBCharger.
+structural.OldUSBCharger.
 
 ------------------------------------------------
 
 Q4. What is the Adapter?
 
 Ans:
-ChargerAdapter.
+structural.ChargerAdapter.
 
 ------------------------------------------------
 
@@ -372,9 +372,9 @@ Structural Design Pattern.
 Interview Summary (30 Seconds)
 
 Adapter Pattern is a Structural Design Pattern that acts as a bridge
-between two incompatible interfaces. In this example, the Mobile
-expects a MobileCharger interface, but the OldUSBCharger provides
-powerSupply() instead of charge(). ChargerAdapter converts the call,
+between two incompatible interfaces. In this example, the structural.Mobile
+expects a structural.MobileCharger interface, but the structural.OldUSBCharger provides
+powerSupply() instead of charge(). structural.ChargerAdapter converts the call,
 allowing the old charger to work seamlessly with the new mobile
 without changing existing code.
 
