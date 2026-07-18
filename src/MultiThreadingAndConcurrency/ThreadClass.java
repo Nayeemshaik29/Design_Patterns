@@ -38,7 +38,7 @@ class ETACalculationThread extends Thread {
     }
 }
 
-class Main {
+public class ThreadClass  {
     public static void main(String[] args) {
         // Create thread objects for SMS, Email, and ETA Calculation
         SMSThread smsThread = new SMSThread();

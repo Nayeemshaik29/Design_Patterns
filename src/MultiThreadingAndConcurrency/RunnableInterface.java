@@ -38,7 +38,7 @@ class ETATask implements Runnable {
     }
 }
 
-class Main {
+public class RunnableInterface  {
     public static void main(String[] args) {
         // Create Runnable objects for SMS, Email, and ETA calculation
         SMSTask smsTask = new SMSTask();
