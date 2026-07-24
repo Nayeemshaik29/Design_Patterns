@@ -135,7 +135,7 @@ class Order1 {
  * can be injected.
  */
 
-interface PaymentService {
+public interface PaymentService {
 
     void process(Order order);
 }
