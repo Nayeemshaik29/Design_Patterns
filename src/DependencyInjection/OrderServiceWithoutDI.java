@@ -232,6 +232,10 @@ class OrderService {
 
     private NotificationService1 notification = new NotificationService1();
 
+    public OrderService(InventoryService inventory, PaymentService payment, NotificationService1 notification) {
+    }
+
+
     /*
      * ------------------------------------------------------------------------
      * Business Method
@@ -264,7 +268,7 @@ public class OrderServiceWithoutDI {
 
     public static void main(String[] args) {
 
-        OrderService orderService = new OrderService();
+        OrderService1 orderService = new OrderService1();
 
         Order order = new Order();
 
