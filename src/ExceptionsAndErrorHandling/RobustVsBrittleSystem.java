@@ -1,3 +1,7 @@
+package ExceptionsAndErrorHandling;
+
+import DependencyInjection.PaymentService;
+
 /**
  * ============================================================================
  * File Name : RobustVsBrittleSystem.java
@@ -96,7 +100,7 @@
  * ============================================================================
  */
 
-class PaymentService {
+class PaymentServicee {
 
     /*
      * Simulate payment processing.
@@ -127,8 +131,8 @@ class PaymentService {
 
 class BrittleOrderService {
 
-    private PaymentService paymentService =
-            new PaymentService();
+    private PaymentServicee paymentService =
+            new PaymentServicee();
 
     public void checkout() {
 
@@ -164,8 +168,9 @@ class BrittleOrderService {
 
 class RobustOrderService {
 
-    private PaymentService paymentService =
-            new PaymentService();
+
+    private PaymentServicee paymentService =
+            new PaymentServicee();
 
     public void checkout() {
 
